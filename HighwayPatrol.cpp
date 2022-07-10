@@ -1,6 +1,9 @@
 #include "HighwayPatrol.h"
+
 #include <iostream>
 #include <cassert>
+
+#include "Highway.h"
 
 HighwayPatrol::HighwayPatrol() : Vehicle("HighwayPatrol")
 {
@@ -28,10 +31,17 @@ void HighwayPatrol::pullOver( Vehicle* v, bool willArrest, Highway* h )
     std::cout << name << ": vehicle is traveling " << v->speed - h->speedLimit << " miles per hour over the speed limit" << std::endl;
     if( willArrest )
     {
-        assert(false);
+        // assert(false);
         //print the vehicle type in this std::cout between "THE [" and "] PULL". 
         std::cout << name << ": YOU IN THE [ " << " ] PULL OVER AND SHOW YOUR HANDS" << std::endl;
         std::cout << "EVERYONE ELSE, SLOW DOWN!! \n\n\n";
         h->removeVehicle(v);
     }
 }
+
+void HighwayPatrol::setSpeed(int s)
+{
+    std::cout << "On duty" << std::endl;
+    Vehicle::setSpeed(s);
+}
+
