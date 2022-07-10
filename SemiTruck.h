@@ -1,7 +1,7 @@
 #pragma once
 #include "Vehicle.h"
 
-struct SemiTruck : public Vehicle
+struct SemiTruck : Vehicle
 {
     SemiTruck(const std::string& n);
     ~SemiTruck() override = default;
@@ -11,8 +11,8 @@ struct SemiTruck : public Vehicle
     void setSpeed(int s) override;
     void pullOver();
 
-    void rightLane();
-    void waySide();
+    void moveToRightLane();
+    void exitToWaySide();
     void slowDown();
 };
 

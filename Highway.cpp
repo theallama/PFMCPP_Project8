@@ -35,7 +35,7 @@ void Highway::addVehicleInternal(Vehicle* v)
     }
     else if(auto* truck = dynamic_cast<SemiTruck*>(v))
     {
-        truck->rightLane();
+        truck->moveToRightLane();
     }
 }
 
@@ -76,20 +76,5 @@ void Highway::removeVehicle(Vehicle* v)
     removeVehicleInternal(v);
 }
 
-std::string Highway::getVehicleType(Vehicle* v)
-{
-    if(auto* car = dynamic_cast<Car*>(v))
-    {
-        return("car");
-    }
-    else if(auto* mCycle = dynamic_cast<Motorcycle*>(v))
-    {
-        return("motorcycle");
-    }
-    else if (auto* truck = dynamic_cast<SemiTruck*>(v))
-    {
-        return("truck");
-    }
-    return (" ");
-}
+
 

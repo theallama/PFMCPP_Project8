@@ -19,7 +19,6 @@ private:
     int speedLimit = 65;
     std::vector<Vehicle*> vehicles;
 
-    std::string getVehicleType(Vehicle* v);
     friend HighwayPatrol; //vehicles and speed limit are private members of highway
 };
 

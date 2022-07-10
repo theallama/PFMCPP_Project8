@@ -2,13 +2,13 @@
 
 SemiTruck::SemiTruck(const std::string& n) : Vehicle(n) {}
 
-void SemiTruck::rightLane( )
+void SemiTruck::moveToRightLane( )
 {
     setSpeed(65);
     std::cout << "Semi: Stay in the right lane" << std::endl;
 }
 
-void SemiTruck::waySide()
+void SemiTruck::exitToWaySide()
 {
     setSpeed(0);
     std::cout << "Semi: Get some sleep" << std::endl;
