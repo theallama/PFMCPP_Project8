@@ -21,18 +21,18 @@ struct HighwayPatrol : Vehicle
 
     std::string getVehicleType(Vehicle* v)
     {
-    if(auto* car = dynamic_cast<Car*>(v))
-    {
-        return("car");
+        if(auto* car = dynamic_cast<Car*>(v))
+        {
+            return("car");
+        }
+        else if(auto* mCycle = dynamic_cast<Motorcycle*>(v))
+        {
+            return("motorcycle");
+        }
+        else if (auto* truck = dynamic_cast<SemiTruck*>(v))
+        {
+            return("truck");
+        }
+        return ("N/A");
     }
-    else if(auto* mCycle = dynamic_cast<Motorcycle*>(v))
-    {
-        return("motorcycle");
-    }
-    else if (auto* truck = dynamic_cast<SemiTruck*>(v))
-    {
-        return("truck");
-    }
-    return ("N/A");
-}
 };
