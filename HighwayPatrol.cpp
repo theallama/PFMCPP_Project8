@@ -35,24 +35,24 @@ void HighwayPatrol::pullOver( Vehicle* v, bool willArrest, Highway* h )
     std::cout << name << ": vehicle is traveling " << v->speed - h->speedLimit << " miles per hour over the speed limit" << std::endl;
     if( willArrest )
     {
-        std::string getVehicleType {" "};
+        std::string vehicleType;
         
         if(auto* car = dynamic_cast<Car*>(v))
         {
-            getVehicleType = "car";
+            vehicleType = "car";
         }
         else if(auto* mCycle = dynamic_cast<Motorcycle*>(v))
         {
-            getVehicleType = "motorcycle";
+            vehicleType = "motorcycle";
         }
         else if(auto* truck = dynamic_cast<SemiTruck*>(v))
         {
-            getVehicleType = "truck";
+            vehicleType = "truck";
         }
         
         //assert(false);
         //print the vehicle type in this std::cout between "THE [" and "] PULL". 
-        std::cout << name << ": YOU IN THE [ " << getVehicleType << " ] PULL OVER AND SHOW YOUR HANDS" << std::endl;
+        std::cout << name << ": YOU IN THE [ " << vehicleType << " ] PULL OVER AND SHOW YOUR HANDS" << std::endl;
         std::cout << "EVERYONE ELSE, SLOW DOWN!! \n\n\n";
         h->removeVehicle(v);
     }
