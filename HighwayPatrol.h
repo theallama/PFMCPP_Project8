@@ -6,7 +6,6 @@
 #include "Motorcycle.h"
 #include "SemiTruck.h"
 
-
 struct Highway;
 
 struct HighwayPatrol : Vehicle 
